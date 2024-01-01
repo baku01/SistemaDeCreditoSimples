@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "13b85c0a-5b52-465a-85f8-9323c0b0412d",
+		"name": "API de Solicitação de Crédito",
+		"description": "Este documento Postman contém uma coleção de requisições para a API de  \nSolicitação de Crédito. Utilize estas requisições para interagir com os  \nendpoints da API, realizar testes e explorar as funcionalidades  \noferecidas pelo sistema de solicitação de crédito. Cada requisição está  \ndevidamente organizada em pastas conforme sua categoria, facilitando a  \nnavegação e compreensão.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26423016",
+		"_collection_link": "https://bold-resonance-440560.postman.co/workspace/843a0f06-dedf-409b-89e0-b07882e1cb5c/collection/26423016-13b85c0a-5b52-465a-85f8-9323c0b0412d?action=share&source=collection_link&creator=26423016"
+	},
+	"item": [
+		{
+			"name": "Credit",
+			"item": [
+				{
+					"name": "CreateCreditsForCostumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"creditValue\" : \"100000.0\",\n    \"dayFirstInstalment\" : \"2023-01-12\",\n    \"numberOfInstalment\" : \"4\",\n    \"customerId\" : 1\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/credits/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"credits",
+								"create"
+							]
+						},
+						"description": "Esta operação permite a criação de novas solicitações de crédito associadas a um cliente específico no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyAllCreditsForCostumer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/credits/query/{CustomerID}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"credits",
+								"query",
+								"{CustomerID}"
+							]
+						},
+						"description": "Esta operação permite a recuperação de todas as solicitações de crédito associadas a um cliente específico no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyCreditByCreditCodeForCostumer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/credits/query/{CustumerID}/{CreditCode}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"credits",
+								"query",
+								"{CustumerID}",
+								"{CreditCode}"
+							]
+						},
+						"description": "Esta operação permite a recuperação de informações detalhadas sobre uma  \nsolicitação de crédito específica associada a um cliente no sistema,  \nutilizando o código único."
+					},
+					"response": []
+				}
+			],
+			"description": "Neste contexto, \"Credit\" podem se referir a solicitações de crédito  \nfeitas por clientes. Isso inclui pedidos para empréstimos,  \nfinanciamentos ou outras formas de crédito financeiro. A API pode  \nfornecer endpoints para criar, recuperar, atualizar e excluir essas  \nsolicitações."
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "CreateCostumer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Julia\",\n    \"lastName\":\"Correa\",\n    \"cpf\":\"XXXXXXXX\",\n    \"income\":\"10000\",\n    \"password\":\"1234\",\n    \"email\":\"Julia@example.com.br\",\n    \"zipCode\":\"15151515\",\n    \"street\":\"Rua Brasil\"\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"create"
+							]
+						},
+						"description": "Esta operação permite a criação de um novo cliente no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "FindCostumer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Pedro\",\n    \"lastName\":\"Correa\",\n    \"cpf\":\"XXXXXXXXX\",\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/query/{CustomerID}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"query",
+								"{CustomerID}"
+							]
+						},
+						"description": "Esta operação permite a recuperação de informações detalhadas sobre um cliente específico no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCostumer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Pedro\",\n    \"lastName\":\"Correa\",\n    \"cpf\":\"XXXXXXXXX\",\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/delete/{CustomerID}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"delete",
+								"{CustomerID}"
+							]
+						},
+						"description": "Esta operação permite a remoção de um cliente específico do sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCostumer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Pedro\",\n    \"lastName\":\"Correa\",\n    \"income\":\"100\",\n    \"password\":\"1234\",\n    \"email\":\"pedro@example.com.br\",\n    \"zipCode\":\"15151515\",\n    \"street\":\"Rua Brasil\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/update/{CustomerID}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"update",
+								"{CustomerID}"
+							]
+						},
+						"description": "Esta operação permite a atualização das informações de um cliente existente no sistema."
+					},
+					"response": []
+				}
+			],
+			"description": "A entidade \"Customer\" representa um cliente no sistema de solicitação de  \ncrédito. Cada instância dessa entidade contém informações detalhadas  \nsobre um cliente específico."
+		}
+	]
+}
