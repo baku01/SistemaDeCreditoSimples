@@ -107,7 +107,7 @@ interface CreditRepository: JpaRepository<Credit, Long> {
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd seu-projeto
+   cd SistemaDeCreditoSimples
    ```
 
 3. Execute o projeto:
