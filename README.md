@@ -102,7 +102,7 @@ interface CreditRepository: JpaRepository<Credit, Long> {
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
+   git clone https://github.com/baku01/SistemaDeCreditoSimples.git
    ```
 
 2. Navegue até o diretório do projeto:
